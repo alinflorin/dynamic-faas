@@ -7,5 +7,4 @@ else
   cp -R /template/* /app
 fi
 cd /app
-npm i
 npm start
