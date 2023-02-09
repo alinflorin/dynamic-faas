@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  dynamic-faas:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-09T18:06:21.032699936Z"
+    description: A Helm chart for Kubernetes
+    digest: b10856d1bbf9295576814b350b0cb3dc9fcd4703bbad9b9c8484cf19cb01801a
+    name: dynamic-faas
+    type: application
+    urls:
+    - https://alinflorin.github.io/dynamic-faas/dynamic-faas-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-09T18:06:21.032136032Z"
