@@ -1,13 +1,17 @@
+{{- range $f := .Values.functions }}
 apiVersion: v1
 kind: Service
-metadata:
-  name: asdasd
+metadata: {{ $fullname := printf "func-%s" $f.name | trunc 63 | trimSuffix "-" }}
+  name: {{ $fullname }}
+  labels:
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}"
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 80
+  - port: {{ default 3000 $f.port | int }}
+    targetPort: {{ default 3000 $f.port | int }}
     protocol: TCP
     name: http
   selector:
-    app: asdasd
+    app: {{ $fullname }}
+{{- end }}

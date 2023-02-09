@@ -1,0 +1,9 @@
+functions:
+  - name: cows
+
+ingress:
+  host: functions.alinflorin.ml
+  tls:
+  - hosts:
+      - functions.alinflorin.ml
+    secretName: functions-tls
