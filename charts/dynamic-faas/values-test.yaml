@@ -3,7 +3,38 @@ functions:
 
 ingress:
   host: functions.alinflorin.ml
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
   tls:
   - hosts:
       - functions.alinflorin.ml
     secretName: functions-tls
+
+
+code-server:
+  enabled: true
+  podAnnotations:
+    linkerd.io/inject: enabled
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/service-upstream: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    hosts:
+     - host: code.alinflorin.ml
+       paths:
+         - /
+    tls:
+     - secretName: code-server-tls
+       hosts:
+         - code.alinflorin.ml
+  persistence:
+   enabled: true
+   existingClaim: "pvc-dynamic-faas"

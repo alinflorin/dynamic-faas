@@ -15,10 +15,18 @@ spec:
       labels:
         app: {{ $fullname }}
     spec:
+      volumes:
+      - name: pv-app
+        persistentVolumeClaim:
+          claimName: pvc-dynamic-faas
       containers:
       - name: {{ $fullname }}
         image: "alinflorinciu/dynamic-faas:latest"
         imagePullPolicy: {{ $.Values.imagePullPolicy }}
+        volumeMounts:
+        - mountPath: "/app"
+          name: pv-app
+          subPath: {{ $f.name }}
         ports:
         - containerPort: {{ default 3000 $f.port | int }}
         livenessProbe:

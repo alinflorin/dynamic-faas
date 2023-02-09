@@ -1,0 +1,6 @@
+dependencies:
+- name: code-server
+  repository: file://charts/code-server
+  version: 3.4.1
+digest: sha256:858ef710b7b669bf914deef70f44b994df95e015de4737dc030bcc86c4d79b36
+generated: "2023-02-09T22:27:02.838160837+02:00"

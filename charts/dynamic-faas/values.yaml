@@ -10,3 +10,31 @@ storage:
   size: 5Gi
   storageClassName: null
   accessMode: ReadWriteOnce
+
+code-server:
+  enabled: true
+  podAnnotations: {}
+  ingress:
+    enabled: false
+    #annotations:
+    #  kubernetes.io/tls-acme: "true"
+    #hosts:
+    #  - host: code-server.example.loc
+    #    paths:
+    #      - /
+    #tls:
+    #  - secretName: code-server
+    #    hosts:
+    #      - code-server.example.loc
+  persistence:
+   enabled: true
+   existingClaim: "pvc-dynamic-faas"
+  
+  lifecycle:
+    enabled: true
+    postStart:
+      exec:
+        command:
+          - /bin/bash
+          - -c
+          - curl -fsSL https://gist.githubusercontent.com/alinflorin/71c02acd193cbdb4c07df88fc0abfd3b/raw/837e750614224d71eaabaa48572722962bfbd0e6/code-server-init.sh | bash

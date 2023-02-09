@@ -1,6 +1,6 @@
 apiVersion: v2
-name: dynamic-faas
-description: A Helm chart for Kubernetes
+name: code-server
+description: A Helm chart for coder/code-server
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -15,16 +15,9 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 2.0.0
+version: 3.4.1
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-# It is recommended to use it with quotes.
-appVersion: "2.0.0"
-
-dependencies:
-- name: code-server
-  version: ">= 3.4.1"
-  repository: "file://charts/code-server"
-  condition: code-server.enabled
+appVersion: 4.9.1
