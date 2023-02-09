@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: health
+  labels:
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}"
+spec:
+  selector:
+    matchLabels:
+      app: health
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: health
+      {{- if .Values.healthPodAnnotations }}
+      annotations:
+      {{- with .Values.healthPodAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- end }}
+    spec:
+      containers:
+      - name: health
+        image: "nginx:alpine"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

@@ -2,6 +2,7 @@ imagePullPolicy: IfNotPresent
 functions: []
 
 functionPodsAnnotations: {}
+healthPodAnnotations: {}
 
 ingress:
   host: functions.local

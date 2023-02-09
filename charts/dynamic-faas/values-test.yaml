@@ -4,6 +4,9 @@ functions:
 functionPodsAnnotations:
   linkerd.io/inject: enabled
 
+healthPodAnnotations:
+  linkerd.io/inject: enabled
+
 ingress:
   host: functions.alinflorin.ml
   annotations:
