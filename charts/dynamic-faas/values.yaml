@@ -1,6 +1,8 @@
 imagePullPolicy: IfNotPresent
 functions: []
 
+functionPodsAnnotations: {}
+
 ingress:
   host: functions.local
   annotations: {}

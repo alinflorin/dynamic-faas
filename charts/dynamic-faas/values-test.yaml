@@ -1,6 +1,9 @@
 functions:
   - name: cows
 
+functionPodsAnnotations:
+  linkerd.io/inject: enabled
+
 ingress:
   host: functions.alinflorin.ml
   annotations:
