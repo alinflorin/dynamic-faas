@@ -1,6 +1,8 @@
 functions:
   - name: cows
 
+imagePullPolicy: Always
+
 functionPodsAnnotations:
   linkerd.io/inject: enabled
 

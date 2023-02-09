@@ -1,5 +1,5 @@
 #!/bin/sh
-FILE=/app/app/index.ts
+FILE=/app/package.json
 if test -f "$FILE"; then
   echo "Code already exists"
 else
