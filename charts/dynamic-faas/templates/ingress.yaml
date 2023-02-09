@@ -28,7 +28,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ $f.name }}
+            name: func-{{ $f.name }}
             port:
               number: {{ default 3000 $f.port | int }}
       {{- end }}
