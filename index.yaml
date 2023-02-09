@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   dynamic-faas:
   - apiVersion: v2
+    appVersion: 2.3.0
+    created: "2023-02-09T21:43:29.493692184Z"
+    dependencies:
+    - condition: code-server.enabled
+      name: code-server
+      repository: file://charts/code-server
+      version: '>= 3.4.1'
+    description: A Helm chart for Kubernetes
+    digest: 7c84e22487f340aef9b726425e72dfc6ad8fd745653771e9f2329349ce6fb18a
+    name: dynamic-faas
+    type: application
+    urls:
+    - https://alinflorin.github.io/dynamic-faas/dynamic-faas-2.3.0.tgz
+    version: 2.3.0
+  - apiVersion: v2
     appVersion: 2.2.0
     created: "2023-02-09T21:33:52.701448561Z"
     dependencies:
@@ -56,4 +71,4 @@ entries:
     urls:
     - https://alinflorin.github.io/dynamic-faas/dynamic-faas-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-09T21:33:52.698479524Z"
+generated: "2023-02-09T21:43:29.491216236Z"
