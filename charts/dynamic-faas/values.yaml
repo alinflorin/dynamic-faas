@@ -13,6 +13,11 @@ storage:
   storageClassName: null
   accessMode: ReadWriteOnce
 
+dataStorage:
+  size: 5Gi
+  storageClassName: null
+  accessMode: ReadWriteOnce
+
 code-server:
   enabled: true
   podAnnotations: {}
