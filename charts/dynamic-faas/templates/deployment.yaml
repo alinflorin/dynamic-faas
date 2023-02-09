@@ -41,14 +41,6 @@ spec:
           subPath: {{ $f.name }}
         ports:
         - containerPort: {{ default 3000 $f.port | int }}
-        livenessProbe:
-          httpGet:
-            path: /
-            port: {{ default 3000 $f.port | int }}
-        readinessProbe:
-          httpGet:
-            path: /
-            port: {{ default 3000 $f.port | int }}
         resources:
 {{ toYaml $f.resources | indent 10 }}
 {{- end }}
