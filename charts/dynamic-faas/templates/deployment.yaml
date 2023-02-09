@@ -25,11 +25,9 @@ spec:
       - name: pv-app
         persistentVolumeClaim:
           claimName: pvc-dynamic-faas
-          readOnly: true
       - name: pv-data
         persistentVolumeClaim:
           claimName: pvc-dynamic-faas-data
-          readOnly: true
       containers:
       - name: {{ $fullname }}
         image: "alinflorinciu/dynamic-faas:latest"
@@ -38,7 +36,6 @@ spec:
         - mountPath: "/app"
           name: pv-app
           subPath: {{ $f.name }}
-          readOnly: true
         - mountPath: "/data"
           name: pv-data
           subPath: {{ $f.name }}
