@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es5",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
     "allowJs": true,
     "lib": ["dom", "es6"],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "baseUrl": "./app",
     "paths": {
       "@/*": ["./*"]
