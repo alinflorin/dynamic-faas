@@ -6,6 +6,8 @@ else
   echo "Code doesn't exist. Copying..."
   cp -R /template/* /app
   chmod -R 777 /app
+  rm -rf /app/charts
+  rm -rf /app/init.sh
 fi
 cd /app
 npm i
